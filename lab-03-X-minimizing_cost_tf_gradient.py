@@ -28,7 +28,7 @@ gvs = optimizer.compute_gradients(cost)
 # gvs = [(tf.clip_by_value(grad, -1., 1.), var) for grad, var in gvs]
 
 # Apply gradients
-apply_gradients = optimizer.apply_gradients(gvs)
+apply_gradients = optimizer.apply_gradients(gvs,[W])
 
 # Launch the graph in a session.
 with tf.Session() as sess:
